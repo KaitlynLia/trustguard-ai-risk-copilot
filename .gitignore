@@ -4,4 +4,4 @@ __pycache__/
 .ipynb_checkpoints/
 data/vector_db/
 .DS_Store
-.conda/
+.conda/data/raw/
