@@ -1,5 +1,6 @@
 import sys
 import json
+import time
 import pandas as pd
 import streamlit as st
 from pathlib import Path
@@ -12,6 +13,7 @@ if str(root_dir) not in sys.path:
 from src.vector_store import initialize_vector_store
 from src.llm_agent import rag_decision_agent, agentic_decision_system
 from src.evaluator import llm_judge, semantic_evaluator, risk_band, threshold_action
+from src.audit_logger import init_audit_db, save_review, save_feedback, load_recent_reviews
 
 
 st.set_page_config(
@@ -32,24 +34,37 @@ try:
 except Exception:
     initialize_vector_store(reset=True)
 
+init_audit_db()
 
-def run_pipeline(case, mode="RAG Agent"):
+
+def run_pipeline(case, mode="RAG Agent", run_eval=True):
+    start_time = time.perf_counter()
+
     if mode == "Agentic Review":
         ai_result = agentic_decision_system(case)
     else:
         ai_result = rag_decision_agent(case)
 
-    judge = llm_judge(case, ai_result)
-    sem = semantic_evaluator(case, ai_result)
+    latency_seconds = time.perf_counter() - start_time
+
+    judge = {}
+    sem = {}
+
+    if run_eval:
+        judge = llm_judge(case, ai_result)
+        sem = semantic_evaluator(case, ai_result)
 
     return {
         "ai_result": ai_result,
         "judge": judge,
-        "semantic": sem
+        "semantic": sem,
+        "latency_seconds": latency_seconds
     }
 
 
-tab1, tab2 = st.tabs(["📊 Batch Evaluation", "🧑‍💼 Interactive Case Review"])
+tab1, tab2, tab3 = st.tabs(
+    ["📊 Batch Evaluation", "🧑‍💼 Interactive Case Review", "🧾 Audit Memory"]
+)
 
 
 with tab1:
@@ -92,12 +107,26 @@ with tab1:
 
         with st.spinner("Running batch AI decision pipeline..."):
             for case in selected_cases:
-                output = run_pipeline(case, mode="RAG Agent")
+                output = run_pipeline(case, mode="RAG Agent", run_eval=True)
                 ai_result = output["ai_result"]
                 judge = output["judge"]
                 sem = output["semantic"]
+                latency_seconds = output["latency_seconds"]
 
                 risk_score = ai_result.get("risk_score")
+                risk_band_value = risk_band(risk_score)
+                threshold_action_value = threshold_action(risk_score)
+
+                save_review(
+                    case=case,
+                    ai_result=ai_result,
+                    mode="Batch Evaluation",
+                    risk_band_value=risk_band_value,
+                    threshold_action_value=threshold_action_value,
+                    judge=judge,
+                    semantic=sem,
+                    latency_seconds=latency_seconds,
+                )
 
                 rows.append({
                     "case_id": case["case_id"],
@@ -105,11 +134,12 @@ with tab1:
                     "ground_truth": case.get("ground_truth_decision"),
                     "ai_decision": ai_result.get("decision"),
                     "risk_score": risk_score,
-                    "risk_band": risk_band(risk_score),
-                    "threshold_action": threshold_action(risk_score),
+                    "risk_band": risk_band_value,
+                    "threshold_action": threshold_action_value,
                     "judge_score": judge.get("overall_score"),
                     "reasoning_quality": judge.get("reasoning_quality"),
-                    "semantic_similarity": sem.get("semantic_similarity")
+                    "semantic_similarity": sem.get("semantic_similarity"),
+                    "latency_seconds": round(latency_seconds, 2)
                 })
 
         st.session_state["eval_df"] = pd.DataFrame(rows)
@@ -120,12 +150,12 @@ with tab1:
         st.subheader("Business & Evaluation Metrics")
 
         st.caption(
-            "Metrics are computed on a curated synthetic benchmark for portfolio demonstration. "
-            "Reference-aligned accuracy means the AI decision matches the expected case label; "
+            "Metrics are computed on a curated benchmark for portfolio demonstration. "
+            "Reference match rate means the AI decision matches the expected case label; "
             "it should not be interpreted as production-level model accuracy."
         )
 
-        col1, col2, col3, col4 = st.columns(4)
+        col1, col2, col3, col4, col5 = st.columns(5)
 
         with col1:
             st.metric("Cases Evaluated", len(df))
@@ -141,27 +171,29 @@ with tab1:
         with col4:
             st.metric("Avg Judge Score", round(df["judge_score"].mean(), 2))
 
+        with col5:
+            st.metric("Avg Latency", f"{df['latency_seconds'].mean():.2f}s")
+
         st.markdown("### Decision & Risk Distribution")
 
         chart_col1, chart_col2 = st.columns(2)
 
         with chart_col1:
-            if "ai_decision" in df.columns:
-                decision_counts = df["ai_decision"].value_counts().reset_index()
-                decision_counts.columns = ["AI Decision", "Count"]
-                st.bar_chart(decision_counts, x="AI Decision", y="Count")
+            decision_counts = df["ai_decision"].value_counts().reset_index()
+            decision_counts.columns = ["AI Decision", "Count"]
+            st.bar_chart(decision_counts, x="AI Decision", y="Count")
 
         with chart_col2:
-            if "risk_band" in df.columns:
-                risk_counts = df["risk_band"].value_counts().reset_index()
-                risk_counts.columns = ["Risk Band", "Count"]
-                st.bar_chart(risk_counts, x="Risk Band", y="Count")
+            risk_counts = df["risk_band"].value_counts().reset_index()
+            risk_counts.columns = ["Risk Band", "Count"]
+            st.bar_chart(risk_counts, x="Risk Band", y="Count")
 
         st.subheader("Case-Level Evaluation Results")
 
         st.caption(
             "Each row represents one reviewed case, including the reference decision, AI decision, "
-            "risk score, threshold action, judge score, reasoning quality, and semantic similarity."
+            "risk score, threshold action, judge score, reasoning quality, semantic similarity, "
+            "and review latency."
         )
 
         st.dataframe(df, use_container_width=True)
@@ -171,11 +203,11 @@ with tab1:
         st.write(
             "The dashboard evaluates the system beyond simple label matching by combining "
             "policy-grounded decisioning, LLM-as-Judge scoring, semantic reasoning alignment, "
-            "risk-band calibration, and threshold-based human review routing."
+            "risk-band calibration, threshold-based human review routing, and latency tracking."
         )
 
         st.write(
-            "A high reference-aligned accuracy on this benchmark should be interpreted as a "
+            "A high reference match rate on this benchmark should be interpreted as a "
             "workflow validation signal rather than proof of production performance. In a real deployment, "
             "the same pipeline should be tested on larger, independently labeled historical cases."
         )
@@ -321,36 +353,54 @@ with tab2:
                 st.stop()
 
             with st.spinner("Running policy-grounded AI risk review..."):
-                if mode == "Agentic Review":
-                    ai_result = agentic_decision_system(custom_case)
-                else:
-                    ai_result = rag_decision_agent(custom_case)
+                output = run_pipeline(custom_case, mode=mode, run_eval=run_evaluation)
+
+            ai_result = output["ai_result"]
+            judge = output["judge"]
+            sem = output["semantic"]
+            latency_seconds = output["latency_seconds"]
 
             decision = ai_result.get("decision", "unknown")
             score = ai_result.get("risk_score", None)
+            risk_band_value = risk_band(score)
+            threshold_action_value = threshold_action(score)
+
+            audit_id = save_review(
+                case=custom_case,
+                ai_result=ai_result,
+                mode=mode,
+                risk_band_value=risk_band_value,
+                threshold_action_value=threshold_action_value,
+                judge=judge,
+                semantic=sem,
+                latency_seconds=latency_seconds,
+            )
+
+            st.session_state["last_audit_id"] = audit_id
+            st.session_state["last_ai_decision"] = decision
 
             st.markdown("#### Decision Summary")
 
-            c1, c2, c3 = st.columns(3)
+            c1, c2, c3, c4 = st.columns(4)
             c1.metric("Decision", str(decision).upper())
 
             if isinstance(score, (int, float)):
                 c2.metric("Risk Score", round(float(score), 2))
-                c3.metric("Risk Band", risk_band(float(score)).upper())
+                c3.metric("Risk Band", risk_band_value.upper())
                 st.progress(min(max(float(score), 0.0), 1.0))
             else:
                 c2.metric("Risk Score", "N/A")
                 c3.metric("Risk Band", "UNKNOWN")
 
+            c4.metric("Latency", f"{latency_seconds:.2f}s")
+
             st.markdown("#### Recommended Action")
 
-            action = threshold_action(score)
-
-            if action == "human_review_required":
+            if threshold_action_value == "human_review_required":
                 st.warning("Human review required before final decision.")
-            elif action == "secondary_review":
+            elif threshold_action_value == "secondary_review":
                 st.info("Secondary review recommended.")
-            elif action == "auto_approve_allowed":
+            elif threshold_action_value == "auto_approve_allowed":
                 st.success("Auto-approval may be allowed under the current risk threshold.")
             else:
                 st.warning("Manual check required because risk score is unavailable.")
@@ -384,10 +434,6 @@ with tab2:
             if run_evaluation:
                 st.markdown("#### Evaluation Scoring")
 
-                with st.spinner("Running evaluation scoring..."):
-                    judge = llm_judge(custom_case, ai_result)
-                    sem = semantic_evaluator(custom_case, ai_result)
-
                 e1, e2, e3 = st.columns(3)
                 e1.metric("LLM Judge Score", judge.get("overall_score"))
                 e2.metric("Reasoning Quality", judge.get("reasoning_quality"))
@@ -411,5 +457,80 @@ with tab2:
 
             with st.expander("Raw Structured AI Output"):
                 st.json(ai_result)
+
+            st.markdown("### 4. Reviewer Feedback Loop")
+            st.caption(
+                "This section simulates how a human analyst can confirm, override, or annotate the AI recommendation."
+            )
+
+            reviewer_agrees = st.radio(
+                "Does the reviewer agree with the AI decision?",
+                ["Yes", "No"],
+                horizontal=True
+            )
+
+            final_decision = st.selectbox(
+                "Reviewer final decision",
+                ["approve", "reject", "escalate"],
+                index=["approve", "reject", "escalate"].index(decision)
+                if decision in ["approve", "reject", "escalate"]
+                else 2
+            )
+
+            reviewer_note = st.text_area(
+                "Reviewer note",
+                placeholder="Example: Escalating because the account is new and the transfer pattern is unusual."
+            )
+
+            if st.button("Save Reviewer Feedback"):
+                save_feedback(
+                    audit_id=audit_id,
+                    reviewer_final_decision=final_decision,
+                    reviewer_note=reviewer_note,
+                    reviewer_agrees=(reviewer_agrees == "Yes"),
+                )
+                st.success(f"Reviewer feedback saved to audit memory. Audit ID: {audit_id}")
+
         else:
             st.info("Load a sample case, edit the JSON if needed, then click Analyze Case.")
+
+
+with tab3:
+    st.subheader("Audit Memory")
+    st.write(
+        "This tab stores recent AI review decisions, risk scores, latency, and reviewer feedback "
+        "in a local SQLite audit log."
+    )
+
+    recent_reviews = load_recent_reviews(limit=50)
+
+    if not recent_reviews:
+        st.info("No audit records yet. Run batch evaluation or analyze an interactive case first.")
+    else:
+        audit_df = pd.DataFrame(recent_reviews)
+
+        metric_col1, metric_col2, metric_col3, metric_col4 = st.columns(4)
+
+        metric_col1.metric("Logged Reviews", len(audit_df))
+
+        if "latency_seconds" in audit_df.columns and audit_df["latency_seconds"].notna().any():
+            metric_col2.metric("Avg Latency", f"{audit_df['latency_seconds'].mean():.2f}s")
+        else:
+            metric_col2.metric("Avg Latency", "N/A")
+
+        if "reviewer_agrees" in audit_df.columns and audit_df["reviewer_agrees"].notna().any():
+            agree_rate = audit_df["reviewer_agrees"].dropna().mean()
+            metric_col3.metric("Reviewer Agreement", f"{agree_rate:.0%}")
+        else:
+            metric_col3.metric("Reviewer Agreement", "N/A")
+
+        if "risk_band" in audit_df.columns:
+            high_risk_count = (audit_df["risk_band"] == "high").sum()
+            metric_col4.metric("High-Risk Logs", int(high_risk_count))
+
+        st.dataframe(audit_df, use_container_width=True)
+
+        st.caption(
+            "For production use, this audit log would be moved to a managed database with authentication, "
+            "access control, retention policy, and compliance monitoring."
+        )
