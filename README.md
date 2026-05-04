@@ -70,6 +70,14 @@ For transparency, the system surfaces retrieved policy context used by the decis
 
 <img src="docs/screenshots/retrieved_policy_context.png" width="900">
 
+### Proactive Alert & Reviewer Feedback
+
+<img src="docs/screenshots/proactive_alert_feedback.png" width="900">
+
+### Audit Memory
+
+<img src="docs/screenshots/audit_memory.png" width="900">
+
 ## Agentic RiskOps Workflow
 
 TrustGuard AI is designed as an agentic risk operations workflow rather than a single-step chatbot. The system coordinates multiple steps to support explainable, policy-grounded decision review:
