@@ -45,6 +45,29 @@ For each case, the system:
 5. Evaluates the result using multiple evaluation layers
 6. Displays results in an interactive Streamlit dashboard
 
+## Demo Screenshots
+
+### Batch Evaluation Dashboard
+
+The batch evaluation view runs multiple risk cases through the AI decision pipeline and summarizes business-facing metrics, including decision accuracy, human review rate, judge score, semantic similarity, and threshold-based actions.
+
+<img src="docs/screenshots/batch_evaluation.png" width="900">
+
+### Interactive Case Review
+
+The interactive review page allows users to load a sample case, edit structured case JSON, choose between a faster RAG Agent and a deeper Agentic Review mode, and run a policy-grounded risk decision.
+
+<p align="center">
+  <img src="docs/screenshots/interactive_input.png" width="48%">
+  <img src="docs/screenshots/interactive_output.png" width="48%">
+</p>
+
+### Retrieved Policy Evidence
+
+For transparency, the system surfaces retrieved policy context used by the decision agent, helping reviewers understand which rules influenced the final recommendation.
+
+<img src="docs/screenshots/retrieved_policy_context.png" width="900">
+
 ## Key Features
 
 - RAG-based policy retrieval using ChromaDB
