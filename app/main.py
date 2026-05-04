@@ -36,6 +36,45 @@ except Exception:
 
 init_audit_db()
 
+def generate_proactive_alert(case, ai_result, risk_band_value, threshold_action_value):
+    """
+    Generate a reviewer-facing proactive risk alert based on risk score,
+    risk band, threshold action, and case-level risk signals.
+    """
+    risk_score = ai_result.get("risk_score")
+    risk_signals = ai_result.get("risk_signals", [])
+    domain = case.get("domain", "unknown")
+
+    if risk_score is None:
+        return None
+
+    high_risk_conditions = [
+        risk_band_value == "high",
+        threshold_action_value == "human_review_required",
+        risk_score >= 0.7
+    ]
+
+    if not any(high_risk_conditions):
+        return None
+
+    signal_text = ", ".join(risk_signals[:3]) if risk_signals else "multiple elevated risk indicators"
+
+    if domain == "finance":
+        return (
+            "🚨 Proactive Risk Alert: This financial case appears high-risk based on "
+            f"{signal_text}. Recommend immediate human review before approval or release of funds."
+        )
+
+    if domain == "ecommerce":
+        return (
+            "🚨 Proactive Risk Alert: This refund case appears high-risk based on "
+            f"{signal_text}. Recommend manual review before issuing a refund."
+        )
+
+    return (
+        "🚨 Proactive Risk Alert: This case shows elevated risk indicators. "
+        "Recommend human review before final action."
+    )
 
 def run_pipeline(case, mode="RAG Agent", run_eval=True):
     start_time = time.perf_counter()
@@ -117,6 +156,13 @@ with tab1:
                 risk_band_value = risk_band(risk_score)
                 threshold_action_value = threshold_action(risk_score)
 
+                proactive_alert = generate_proactive_alert(
+                    case,
+                    ai_result,
+                    risk_band_value,
+                    threshold_action_value
+                )
+      
                 save_review(
                     case=case,
                     ai_result=ai_result,
@@ -139,6 +185,7 @@ with tab1:
                     "judge_score": judge.get("overall_score"),
                     "reasoning_quality": judge.get("reasoning_quality"),
                     "semantic_similarity": sem.get("semantic_similarity"),
+                    "proactive_alert": proactive_alert,
                     "latency_seconds": round(latency_seconds, 2)
                 })
 
@@ -155,7 +202,7 @@ with tab1:
             "it should not be interpreted as production-level model accuracy."
         )
 
-        col1, col2, col3, col4, col5 = st.columns(5)
+        col1, col2, col3, col4, col5, col6 = st.columns(6)
 
         with col1:
             st.metric("Cases Evaluated", len(df))
@@ -173,6 +220,9 @@ with tab1:
 
         with col5:
             st.metric("Avg Latency", f"{df['latency_seconds'].mean():.2f}s")
+        with col6:
+            alert_rate = df["proactive_alert"].notna().mean()
+            st.metric("Alert Rate", f"{alert_rate:.0%}")
 
         st.markdown("### Decision & Risk Distribution")
 
@@ -220,6 +270,18 @@ with tab2:
         "Use a sample case or edit the JSON directly."
     )
 
+    with st.expander("How the Agentic Risk Review Workflow Works"):
+        st.markdown(
+            """
+            1. **Parse structured case input**: read customer profile, transaction details, and risk signals.  
+            2. **Retrieve policy context**: use ChromaDB retrieval to fetch relevant FINRA or e-commerce policy rules.  
+            3. **Generate structured decision**: ask the LLM agent to return decision, risk score, risk signals, policy evidence, and reasoning.  
+            4. **Calibrate operational action**: map risk score into auto-approve, secondary review, or human escalation.  
+            5. **Generate proactive alert**: surface high-risk warnings for cases requiring urgent reviewer attention.  
+            6. **Save audit memory**: persist AI output, latency, retrieved evidence, and reviewer feedback into SQLite.
+            """
+        )
+        
     sample_cases = {
         "E-commerce: high-value return without receipt": {
             "case_id": "CUSTOM-E-HIGH-VALUE-NO-RECEIPT",
@@ -365,6 +427,13 @@ with tab2:
             risk_band_value = risk_band(score)
             threshold_action_value = threshold_action(score)
 
+            proactive_alert = generate_proactive_alert(
+                custom_case,
+                ai_result,
+                risk_band_value,
+                threshold_action_value
+            )
+
             audit_id = save_review(
                 case=custom_case,
                 ai_result=ai_result,
@@ -396,6 +465,9 @@ with tab2:
 
             st.markdown("#### Recommended Action")
 
+            if proactive_alert:
+                st.markdown("#### Proactive Risk Alert")
+                st.error(proactive_alert)
             if threshold_action_value == "human_review_required":
                 st.warning("Human review required before final decision.")
             elif threshold_action_value == "secondary_review":
