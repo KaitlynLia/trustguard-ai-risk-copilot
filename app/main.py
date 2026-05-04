@@ -132,7 +132,7 @@ with tab1:
 
         with col2:
             accuracy = (df["ground_truth"] == df["ai_decision"]).mean()
-            st.metric("Reference-Aligned Accuracy", f"{accuracy:.0%}")
+            st.metric("Reference Match Rate", f"{accuracy:.0%}")
 
         with col3:
             human_review_rate = (df["threshold_action"] == "human_review_required").mean()
