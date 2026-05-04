@@ -1,0 +1,2902 @@
+[
+  {
+    "case_id": "E-000",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 17,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-001",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 57,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-002",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 52,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-003",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 337,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-004",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 147,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 1
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-005",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 84,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-006",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 54,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-007",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 240,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-008",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 155,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-009",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 28,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-010",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 56,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-011",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 191,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-012",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 141,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-013",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 199,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-014",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 21,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-015",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 295,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-016",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 239,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-017",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 292,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-018",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 190,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-019",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 29,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-020",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 310,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-021",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 275,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-022",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 141,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-023",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 237,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 1
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-024",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 325,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-025",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 87,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-026",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 62,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-027",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 295,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-028",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 277,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-029",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 140,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-030",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 358,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-031",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 196,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-032",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 37,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-033",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 8,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-034",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 174,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-035",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 114,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-036",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 247,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-037",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 225,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-038",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 32,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-039",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 60,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-040",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 76,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-041",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 43,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-042",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 12,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-043",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 251,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-044",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 6,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-045",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 361,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-046",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 116,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 1
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-047",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 304,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-048",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 100,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-049",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 296,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-050",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 303,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-051",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 165,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-052",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 335,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-053",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 239,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-054",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 264,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-055",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 194,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-056",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 159,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-057",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 73,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-058",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 84,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-059",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 109,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-060",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 329,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-061",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 71,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-062",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 223,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-063",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 81,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-064",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 80,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-065",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 25,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-066",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 186,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-067",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 88,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-068",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 175,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-069",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 364,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 2
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-070",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 107,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-071",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 17,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-072",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 40,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-073",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 279,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-074",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 302,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-075",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 181,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 6
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-076",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 102,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-077",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 280,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-078",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 174,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-079",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 264,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-080",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 156,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-081",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 199,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-082",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 5,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 5
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-083",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 301,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-084",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 350,
+      "num_past_refunds_60d": 3
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-085",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 150,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-086",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 163,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "E-087",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 130,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 50,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-088",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 299,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-089",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 80,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 1
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-090",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 361,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 120,
+      "delivery_days_ago": 9
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-091",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 67,
+      "num_past_refunds_60d": 1
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-092",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 291,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 10
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-093",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 263,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 980,
+      "delivery_days_ago": 7
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-094",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 248,
+      "num_past_refunds_60d": 6
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-095",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 271,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 1500,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-096",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 151,
+      "num_past_refunds_60d": 0
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "no longer needed",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-097",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 46,
+      "num_past_refunds_60d": 4
+    },
+    "transaction": {
+      "item_price": 300,
+      "delivery_days_ago": 3
+    },
+    "customer_claim": "wrong item received",
+    "evidence_provided": true,
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "E-098",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 83,
+      "num_past_refunds_60d": 5
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 4
+    },
+    "customer_claim": "item damaged on arrival",
+    "evidence_provided": true,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "E-099",
+    "domain": "ecommerce",
+    "customer_profile": {
+      "account_age_days": 282,
+      "num_past_refunds_60d": 2
+    },
+    "transaction": {
+      "item_price": 600,
+      "delivery_days_ago": 8
+    },
+    "customer_claim": "item is defective",
+    "evidence_provided": false,
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-000",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 216
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-001",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 195
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-002",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 153
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-003",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 280
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-004",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 140
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-005",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 200
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-006",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 240
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-007",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 304
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-008",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 70
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-009",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 134
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-010",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 233
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-011",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 143
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-012",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 241
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-013",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 115
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-014",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 127
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-015",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 79
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-016",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 343
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-017",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 359
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-018",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 311
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-019",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 56
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-020",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 347
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-021",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 39
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-022",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 351
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-023",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 273
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-024",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 260
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-025",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 251
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-026",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 326
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-027",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 91
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-028",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 224
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-029",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 45
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-030",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 238
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-031",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 254
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-032",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 109
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-033",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 144
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-034",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 98
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-035",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 251
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-036",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 230
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-037",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 114
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-038",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 340
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-039",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 272
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-040",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 170
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-041",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 157
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-042",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 99
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-043",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 354
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-044",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 248
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-045",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 100
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-046",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 92
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-047",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 65
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-048",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 284
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-049",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 53
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-050",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 246
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-051",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 27
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-052",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 34
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-053",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 296
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-054",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 289
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-055",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 61
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-056",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 195
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-057",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 302
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-058",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 318
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-059",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 321
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-060",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 81
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-061",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 39
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-062",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 231
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-063",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 119
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-064",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 37
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-065",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 339
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-066",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 279
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-067",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 73
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-068",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 158
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-069",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 240
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-070",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 257
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-071",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 307
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-072",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 310
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-073",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 118
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-074",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 21
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-075",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 334
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-076",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 300
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-077",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 241
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-078",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 165
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-079",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 211
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-080",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 282
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-081",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 162
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-082",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 207
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-083",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 28
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-084",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 256
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-085",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 137
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-086",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 358
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-087",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 323
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-088",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 283
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-089",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 116
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-090",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 332
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-091",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 261
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-092",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 242
+    },
+    "transaction": {
+      "amount": 5000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-093",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 75
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": false,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "escalate"
+  },
+  {
+    "case_id": "F-094",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 261
+    },
+    "transaction": {
+      "amount": 12000,
+      "rapid_transactions": true,
+      "geo_risk": true
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "reject"
+  },
+  {
+    "case_id": "F-095",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 213
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-096",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 145
+    },
+    "transaction": {
+      "amount": 200,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-097",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 229
+    },
+    "transaction": {
+      "amount": 800,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-098",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 283
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": false,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  },
+  {
+    "case_id": "F-099",
+    "domain": "finance",
+    "customer_profile": {
+      "account_age_days": 97
+    },
+    "transaction": {
+      "amount": 2000,
+      "rapid_transactions": true,
+      "geo_risk": false
+    },
+    "customer_claim": "Transaction flagged for review",
+    "ground_truth_decision": "approve"
+  }
+]

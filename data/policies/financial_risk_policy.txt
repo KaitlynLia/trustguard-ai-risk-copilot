@@ -1,0 +1,19 @@
+Financial Transaction Risk Review Policy
+
+1. Suspicious Transaction Activity
+Transactions may require review if the amount is unusually high relative to the customer's historical behavior.
+
+2. Rapid Movement of Funds
+Multiple large transfers within a short period may indicate elevated risk.
+
+3. Account Age Risk
+New accounts with high-value transactions should receive additional scrutiny.
+
+4. Geographic Risk
+Transactions involving high-risk jurisdictions may require enhanced due diligence.
+
+5. Inconsistent Customer Profile
+Transactions inconsistent with stated income, occupation, or normal activity patterns should be escalated.
+
+6. Review Outcomes
+Analysts may approve, reject, or escalate a case depending on risk severity, available evidence, and policy alignment.

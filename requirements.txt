@@ -1,0 +1,15 @@
+openai
+python-dotenv
+pandas
+numpy
+scikit-learn
+chromadb
+langchain
+langchain-openai
+langchain-community
+tiktoken
+streamlit
+fastapi
+uvicorn
+pydantic
+streamlit
