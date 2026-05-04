@@ -55,19 +55,38 @@ tab1, tab2 = st.tabs(["📊 Batch Evaluation", "🧑‍💼 Interactive Case Rev
 with tab1:
     st.sidebar.header("Batch Demo Settings")
 
-    num_cases = st.sidebar.slider("Number of cases to evaluate", 1, 20, 5)
-
     selected_domain = st.sidebar.selectbox(
         "Domain filter",
         ["all", "ecommerce", "finance"]
     )
 
     filtered_cases = cases
-
     if selected_domain != "all":
         filtered_cases = [c for c in cases if c["domain"] == selected_domain]
 
-    selected_cases = filtered_cases[:num_cases]
+    max_cases = len(filtered_cases)
+
+    if max_cases == 0:
+        st.warning("No cases available for the selected domain.")
+        selected_cases = []
+    else:
+        display_max_cases = min(20, max_cases)
+        default_cases = min(10, display_max_cases)
+
+
+        num_cases = st.sidebar.slider(
+            "Number of cases to evaluate",
+            min_value=1,
+            max_value=display_max_cases,
+            value=default_cases
+       )
+
+        selected_cases = filtered_cases[:num_cases]
+
+        st.caption(
+            f"Showing {num_cases} out of {max_cases} available cases. "
+            "Batch evaluation is capped at 20 cases to avoid long LLM runtime."
+        )
 
     if st.button("Run Batch Evaluation"):
         rows = []
