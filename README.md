@@ -4,6 +4,21 @@ TrustGuard AI is a prototype AI decision support system for e-commerce refund re
 
 The project simulates policy-driven risk workflows and uses LLM-based decisioning, RAG-based policy retrieval, multi-layer evaluation, and a Streamlit dashboard to support human-in-the-loop risk review.
 
+# TrustGuard AI: Risk Decision Copilot
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://trustguard-ai-risk-copilot.streamlit.app)
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green)
+![License](https://img.shields.io/badge/License-MIT-yellow))
+
+> LLM-powered risk decision copilot for e-commerce return fraud and financial compliance review.
+> Inspired by manual audit workflows from a PwC internship handling 200K+ fund disbursement records.
+
+## System Architecture
+
+![TrustGuard AI Architecture](docs/pipeline.png)
+
+Knowledge base sourced from FINRA 2025 Annual Regulatory Oversight Report (public domain) and e-commerce FAQ dataset (HuggingFace: Andyrasika/Ecommerce_FAQ)
 ## Problem
 
 Customer-facing companies often need to make fast and explainable decisions under uncertainty.
