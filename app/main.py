@@ -14,6 +14,7 @@ from src.vector_store import initialize_vector_store
 from src.llm_agent import rag_decision_agent, agentic_decision_system
 from src.evaluator import llm_judge, semantic_evaluator, risk_band, threshold_action
 from src.audit_logger import init_audit_db, save_review, save_feedback, load_recent_reviews
+from src.risk_planner import build_risk_review_plan
 
 
 st.set_page_config(
@@ -281,7 +282,7 @@ with tab2:
             6. **Save audit memory**: persist AI output, latency, retrieved evidence, and reviewer feedback into SQLite.
             """
         )
-        
+
     sample_cases = {
         "E-commerce: high-value return without receipt": {
             "case_id": "CUSTOM-E-HIGH-VALUE-NO-RECEIPT",
@@ -343,12 +344,20 @@ with tab2:
         }
     }
 
+    default_sample_name = "E-commerce: high-value return without receipt"
+
+    if "selected_sample_case" not in st.session_state:
+        st.session_state["selected_sample_case"] = default_sample_name
+
+    if "last_selected_sample_case" not in st.session_state:
+        st.session_state["last_selected_sample_case"] = default_sample_name
+
     if "interactive_case_json" not in st.session_state:
         st.session_state["interactive_case_json"] = json.dumps(
-            sample_cases["E-commerce: high-value return without receipt"],
+            sample_cases[default_sample_name],
             indent=2
         )
-
+        
     col_left, col_right = st.columns([1, 1.1])
 
     with col_left:
@@ -356,14 +365,21 @@ with tab2:
 
         selected_sample = st.selectbox(
             "Load a sample case",
-            list(sample_cases.keys())
+            list(sample_cases.keys()),
+            key="selected_sample_case"
         )
 
-        if st.button("Load Selected Sample"):
+        if st.session_state["last_selected_sample_case"] != selected_sample:
             st.session_state["interactive_case_json"] = json.dumps(
                 sample_cases[selected_sample],
                 indent=2
             )
+            st.session_state["last_selected_sample_case"] = selected_sample
+
+        st.caption(
+            "Changing the sample case automatically updates the JSON below. "
+            "You can still manually edit the JSON before running analysis."
+        )
 
         mode = st.radio(
             "Decision Mode",
@@ -413,6 +429,24 @@ with tab2:
             if custom_case["domain"] not in ["ecommerce", "finance"]:
                 st.error("Domain must be either 'ecommerce' or 'finance'.")
                 st.stop()
+
+            review_plan = build_risk_review_plan(custom_case)
+
+            with st.expander("Planned Review Tools", expanded=True):
+                st.caption(
+                    "This lightweight planner selects which review tools should be used based on the case domain and risk indicators."
+                )
+
+                st.markdown("**Risk Indicators Detected**")
+                if review_plan["risk_indicators_detected"]:
+                    for indicator in review_plan["risk_indicators_detected"]:
+                        st.write(f"- {indicator}")
+                else:
+                    st.write("- No major pre-decision risk indicators detected.")
+
+                st.markdown("**Tool Plan**")
+                for step_id, step in enumerate(review_plan["planned_tools"], start=1):
+                    st.write(f"{step_id}. `{step['tool']}` — {step['reason']}")
 
             with st.spinner("Running policy-grounded AI risk review..."):
                 output = run_pipeline(custom_case, mode=mode, run_eval=run_evaluation)
