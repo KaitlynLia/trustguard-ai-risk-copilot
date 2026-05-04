@@ -13,7 +13,7 @@ The project simulates policy-driven risk workflows and uses LLM-based decisionin
 ![OpenAI](https://img.shields.io/badge/OpenAI-GPT--4o--mini-green)
 ![License](https://img.shields.io/badge/License-MIT-yellow))
 
-> LLM-powered risk decision copilot for e-commerce return fraud and financial compliance review.
+> > Agentic AI risk decision copilot for financial compliance and refund-risk review, combining RAG, structured LLM decisioning, audit memory, proactive risk alerts, and human-in-the-loop feedback.
 > Inspired by manual audit workflows from a PwC internship handling 200K+ fund disbursement records.
 
 ## System Architecture
@@ -69,6 +69,45 @@ The interactive review page allows users to load a sample case, edit structured 
 For transparency, the system surfaces retrieved policy context used by the decision agent, helping reviewers understand which rules influenced the final recommendation.
 
 <img src="docs/screenshots/retrieved_policy_context.png" width="900">
+
+## Agentic RiskOps Workflow
+
+TrustGuard AI is designed as an agentic risk operations workflow rather than a single-step chatbot. The system coordinates multiple steps to support explainable, policy-grounded decision review:
+
+1. **Parse structured case input**: read customer profile, transaction details, and risk signals.
+2. **Retrieve policy context**: use ChromaDB retrieval to fetch relevant FINRA or e-commerce policy rules.
+3. **Generate structured decision**: ask the LLM agent to return decision, risk score, risk signals, policy evidence, and reasoning.
+4. **Calibrate operational action**: map risk score into auto-approve, secondary review, or human escalation.
+5. **Generate proactive alert**: surface high-risk warnings for cases requiring urgent reviewer attention.
+6. **Save audit memory**: persist AI output, latency, retrieved evidence, and reviewer feedback into SQLite.
+
+## Audit Memory & Human Feedback Loop
+
+The system includes a lightweight SQLite-based audit memory that records each AI-assisted review, including:
+
+- case ID and domain
+- AI decision and risk score
+- risk band and threshold action
+- retrieved policy evidence
+- LLM reasoning
+- latency
+- reviewer final decision
+- reviewer agreement or override
+
+This simulates how a real risk operations team could preserve traceability, review AI recommendations, and collect human feedback for future evaluation and prompt improvement.
+
+## Operational Monitoring
+
+The dashboard tracks operational signals such as:
+
+- reference match rate
+- human review rate
+- average judge score
+- risk-band distribution
+- proactive alert rate
+- review latency
+
+These metrics help evaluate not only decision quality, but also whether the AI workflow is practical for real review operations.
 
 ## Key Features
 
