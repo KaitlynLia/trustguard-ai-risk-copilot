@@ -51,7 +51,7 @@ For each case, the system:
 
 ### Batch Evaluation Dashboard
 
-The batch evaluation view runs multiple risk cases through the AI decision pipeline and summarizes business-facing metrics, including decision accuracy, human review rate, judge score, semantic similarity, and threshold-based actions.
+The batch evaluation view summarizes reference match rate, human review rate, judge score, decision distribution, risk-band distribution, and case-level evaluation results.
 
 <img src="docs/screenshots/batch_evaluation.png" width="900">
 
