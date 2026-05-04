@@ -5,3 +5,6 @@ __pycache__/
 data/vector_db/
 .DS_Store
 .conda/data/raw/
+
+data/raw/
+data/*.db
